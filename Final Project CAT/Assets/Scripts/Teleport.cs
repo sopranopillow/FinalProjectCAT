@@ -75,7 +75,7 @@ public class Teleport : MonoBehaviour {
 		//set the movement indicator click to false if the destination and current gameobject position are equal
 		else if(click && Mathf.Approximately(gameObject.transform.position.magnitude, destination.magnitude)) {
 			click = false;
-			Debug.Log("Whas poppin ma nigga");
+			Debug.Log("Changing position of bolita");
 		}
 	}
 }

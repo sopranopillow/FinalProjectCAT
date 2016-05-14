@@ -5,13 +5,6 @@ public class ScrollingB : MonoBehaviour {
 
 	public float limitSpeed = 1.5f;
 	public float speed = 0.001f;
-	
-	public GameObject square_1;
-	public GameObject square_2;
-	public GameObject square_3;
-	public GameObject square_4;
-	public GameObject square_5;
-	public GameObject square_6;
 
 	// Use this for initialization
 	void Start () {
