@@ -7,23 +7,26 @@ public class Square : MonoBehaviour {
 	private Transform startline;
 	public Transform myTransform;
 
+	private Vector3 firstpos;
 	private float duration;
 
 		void Awake()
 		{
 			myTransform = transform;
+			
 		}
 
 		void Start ()
 		{
-		duration = .5f;
-		Vector3 startline = new Vector3 (transform.position.x, transform.position.y, 0f);
-		Vector3 target = new Vector3 (transform.position.x, -5.66f, 0f);
-
+		duration = 2f;
+		firstpos = transform.position;
 		}
 
 		void Update () {
-		transform.position = Vector3.Lerp(startline.position, target.position, Time.deltaTime/duration);
+		transform.position = Vector3.MoveTowards(transform.position, new Vector3 (transform.position.x, -5.66f, 0f), Time.deltaTime*duration);
+		if (transform.position == new Vector3 (transform.position.x, -5.66f, 0f)) {
+			transform.position = new Vector3 (transform.position.x, 6f, 0f);
 		}
-		
+
+		}
 }

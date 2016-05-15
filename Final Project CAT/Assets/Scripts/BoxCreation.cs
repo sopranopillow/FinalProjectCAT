@@ -125,7 +125,6 @@ public class BoxCreation : MonoBehaviour {
 		newSquare.GetComponent<Square> ().Color = color;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
 
-		//GameObject.FindWithTag ("Player").GetComponent<SpriteRenderer> ().sprite = squareSprite;
 	}
 
 	public GameObject getPrefab(int division)
