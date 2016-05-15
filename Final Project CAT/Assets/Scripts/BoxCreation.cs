@@ -38,6 +38,7 @@ public class BoxCreation : MonoBehaviour {
 		{
 			for (int i = 0; i < Division; i++) {
 				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), 6+(1.5f*a), Default, Division);
+
 			}
 			//Increases division
 			Division++;
@@ -123,6 +124,8 @@ public class BoxCreation : MonoBehaviour {
 		newSquare.transform.position = new Vector3 (xPos, yPos, 0);
 		newSquare.GetComponent<Square> ().Color = color;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
+
+		//GameObject.FindWithTag ("Player").GetComponent<SpriteRenderer> ().sprite = squareSprite;
 	}
 
 	public GameObject getPrefab(int division)
