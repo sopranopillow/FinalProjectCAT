@@ -37,7 +37,7 @@ public class BoxCreation : MonoBehaviour {
 		for (int a = 0; a < 5; a++) 
 		{
 			for (int i = 0; i < Division; i++) {
-				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), y+(1.5f*a), Default, Division);
+				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), 6+(1.5f*a), Default, Division);
 			}
 			//Increases division
 			Division++;
