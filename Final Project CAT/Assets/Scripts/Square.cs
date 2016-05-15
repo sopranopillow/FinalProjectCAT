@@ -10,6 +10,8 @@ public class Square : MonoBehaviour {
 	private Vector3 firstpos;
 	private float duration;
 
+	private float limitSpeed;
+
 		void Awake()
 		{
 			myTransform = transform;
@@ -18,15 +20,24 @@ public class Square : MonoBehaviour {
 
 		void Start ()
 		{
-		duration = 2f;
+		limitSpeed = 10f;
+		duration = 1f;
 		firstpos = transform.position;
 		}
 
 		void Update () {
 		transform.position = Vector3.MoveTowards(transform.position, new Vector3 (transform.position.x, -5.66f, 0f), Time.deltaTime*duration);
-		if (transform.position == new Vector3 (transform.position.x, -5.66f, 0f)) {
-			transform.position = new Vector3 (transform.position.x, 6f, 0f);
-		}
+
+			//Restart Loop
+			if (transform.position == new Vector3 (transform.position.x, -5.66f, 0f)) {
+				transform.position = new Vector3 (transform.position.x, 6.4f, 0f);
+				//Destroy(gameObject);
+			}
+
+			//Speed
+			if (duration < limitSpeed) {
+				duration += .008f;
+			}
 
 		}
 }

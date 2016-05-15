@@ -17,6 +17,8 @@ public class BoxCreation : MonoBehaviour {
 	int[] acolor = new int [6];
 
 	int acount=0;
+
+	int boxcount=2;
 		
 	void Start ()
 	{
@@ -37,19 +39,20 @@ public class BoxCreation : MonoBehaviour {
 		for (int a = 0; a < 5; a++) 
 		{
 			for (int i = 0; i < Division; i++) {
-				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), 6+(1.5f*a), Default, Division);
-
+				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), 6+(2.5f*a), Default, Division);
 			}
-			//Increases division
-			Division++;
 
 			//Resets acolor array to -1 and acount to 0
-			//--------------------------
 			for (int o = 0; o < acolor.Length; o++) {
 				acolor [o] = -1;
 			}
 			acount = 0;
-			//--------------------------
+
+			//Increases division
+			Division++;
+
+
+
 		}
 	}
 
