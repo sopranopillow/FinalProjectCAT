@@ -16,7 +16,7 @@ public class ScrollingB : MonoBehaviour {
 		Vector2 offset = new Vector2 (0, Time.time * (speed));
 		if(speed<limitSpeed)
 			speed+=0.00009f;
-		//Console.writeLine(speed);
+		
 		GetComponent<Renderer>().material.mainTextureOffset = offset;
 	}
 }

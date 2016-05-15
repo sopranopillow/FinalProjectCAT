@@ -14,13 +14,23 @@ public class BoxCreation : MonoBehaviour {
 	public float x;
 	public float y;
 
-	public float cnt=.01f;
+	int[] acolor = new int [6];
 
+	int acount=0;
+		
 	void Start ()
 	{
+		//Sets array to -1s
+		//------------------
+		for (int o = 0; o < acolor.Length; o++) {
+			acolor [o] = -1;
+		}
+		//-----------------
+
 		MakeLine (2);
 	}
 		
+
 
 	public void MakeLine(int Division)
 	{
@@ -29,7 +39,16 @@ public class BoxCreation : MonoBehaviour {
 			for (int i = 0; i < Division; i++) {
 				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), y+(1.5f*a), Default, Division);
 			}
+			//Increases division
 			Division++;
+
+			//Resets acolor array to -1 and acount to 0
+			//--------------------------
+			for (int o = 0; o < acolor.Length; o++) {
+				acolor [o] = -1;
+			}
+			acount = 0;
+			//--------------------------
 		}
 	}
 
@@ -81,13 +100,27 @@ public class BoxCreation : MonoBehaviour {
 
 	public void MakeRandomSquare(float xPos, float yPos, Sprite[] def, int division)
 	{
-		int arrayIndex = Random.Range (0, def.Length);
-		Sprite squareSprite = def [arrayIndex];
-		string color = getName(arrayIndex);
 
-		GameObject newSquare = Instantiate (getPrefab(division));
+		int arrayIndex = Random.Range (0, def.Length);
+
+		//Avoids same color in one line
+		//--------------------------
+		for (int p = 0; p < acolor.Length; p++) {
+			if (acolor [p].Equals (arrayIndex)) {
+				p = -1;
+				arrayIndex = Random.Range (0, def.Length);
+			}
+		}
+		acolor[acount]=arrayIndex;
+		acount++;
+		//--------------------------
+
+		Sprite squareSprite = def [arrayIndex];
+		string color = getName (arrayIndex);
+
+		GameObject newSquare = Instantiate (getPrefab (division));
 		newSquare.name = color;
-		newSquare.transform.position = new Vector3(xPos, yPos, 0);
+		newSquare.transform.position = new Vector3 (xPos, yPos, 0);
 		newSquare.GetComponent<Square> ().Color = color;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
 	}
