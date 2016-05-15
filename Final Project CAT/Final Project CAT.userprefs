@@ -1,9 +1,12 @@
-﻿<Properties StartupItem="Final Project CAT.CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ScrollingB.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BoxCreation.cs">
     <Files>
-      <File FileName="Assets\Teleport.cs" Line="2" Column="26" />
-      <File FileName="Assets\ScrollingB.cs" Line="18" Column="65" />
+      <File FileName="Assets\Scripts\Teleport.cs" Line="78" Column="42" />
+      <File FileName="Assets\Scripts\GetMousePos.cs" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\ScrollingB.cs" Line="11" Column="3" />
+      <File FileName="Assets\Scripts\BoxCreation.cs" Line="27" Column="75" />
+      <File FileName="Assets\Scripts\Square.cs" Line="5" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

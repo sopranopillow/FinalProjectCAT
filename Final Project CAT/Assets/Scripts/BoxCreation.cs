@@ -35,19 +35,19 @@ public class BoxCreation : MonoBehaviour {
 		switch (Division) 
 		{
 		case 2:
-			return -2.47f;
+			return -1.46f;
 			break;
 		case 3:
-			return -3.3f;
+			return -1.94f;
 			break;
 		case 4:
-			return -3.71f;
+			return -2.2f;
 			break;
 		case 5:
-			return -3.93f;
+			return -2.36f;
 			break;
 		case 6:
-			return -4.1f;
+			return -2.44f;
 			break;
 		}
 		return 0;
@@ -58,19 +58,19 @@ public class BoxCreation : MonoBehaviour {
 		switch (Division) 
 		{
 		case 2:
-			return 2.467777f;
+			return 1.471654f;
 			break;
 		case 3:
-			return 1.64518466666666666f;
+			return 0.9700123f;
 			break;
 		case 4:
-			return 1.2338885f;
+			return 0.7333211f;
 			break;
 		case 5:
-			return 0.9871108f;
+			return 0.5885219f;
 			break;
 		case 6:
-			return 0.8225923333333333f;
+			return 0.4886053f;
 			break;
 		}
 		return 0;
