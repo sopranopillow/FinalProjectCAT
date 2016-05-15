@@ -15,7 +15,6 @@ public class Teleport : MonoBehaviour {
 
 	public Camera cam;
 
-	public float velocity;
 
 	// Use this for initialization
 	void Start () {
