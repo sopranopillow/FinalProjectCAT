@@ -94,7 +94,7 @@ public class BoxCreation : MonoBehaviour {
 		{
 			Duration -= Speed;
 			if (waitTime > 0.5f) {
-				if (waitTime > 0.8f)
+				if (waitTime > 0.85f)
 					waitTime -= wait / 3;
 				else if (waitTime > 0.3f)
 					waitTime -= wait / 2;
