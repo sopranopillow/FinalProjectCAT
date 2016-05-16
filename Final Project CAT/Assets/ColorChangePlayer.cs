@@ -15,7 +15,6 @@ public class ColorChangePlayer : MonoBehaviour {
 
 	public void changecolor(Sprite[] def)
 	{
-
 		int arrayIndex = Random.Range (0, def.Length);
 
 
@@ -25,14 +24,12 @@ public class ColorChangePlayer : MonoBehaviour {
 		gameObject.name = colorptex;
 		gameObject.GetComponent<BallName> ().ColorP = colorptex;
 		gameObject.GetComponent<SpriteRenderer> ().sprite = playerSprite;
-
 	}
 
 
 	public string getName(int ind)
 	{
-		switch (ind) 
-		{
+		switch (ind) {
 		case 0:
 			return "GREEN";
 			break;

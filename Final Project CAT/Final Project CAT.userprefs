@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BoxCreation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Square.cs">
     <Files>
-      <File FileName="Assets\Scripts\BoxCreation.cs" Line="36" Column="2" />
-      <File FileName="Assets\Scripts\Square.cs" Line="15" Column="15" />
-      <File FileName="Assets\Scripts\ScrollingB.cs" Line="1" Column="1" />
-      <File FileName="Assets\BallName.cs" Line="1" Column="1" />
-      <File FileName="Assets\ColorChangePlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Teleport.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GetMousePos.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BoxCreation.cs" Line="4" Column="43" />
+      <File FileName="Assets\Scripts\Square.cs" Line="30" Column="3" />
+      <File FileName="Assets\Scripts\ScrollingB.cs" Line="6" Column="33" />
+      <File FileName="Assets\BallName.cs" Line="7" Column="2" />
+      <File FileName="Assets\ColorChangePlayer.cs" Line="8" Column="2" />
+      <File FileName="Assets\Scripts\Teleport.cs" Line="8" Column="30" />
+      <File FileName="Assets\Scripts\GetMousePos.cs" Line="9" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

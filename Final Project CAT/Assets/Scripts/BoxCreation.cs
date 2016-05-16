@@ -19,18 +19,35 @@ public class BoxCreation : MonoBehaviour {
 	int acount=0;
 
 	int boxcount=2;
+
+
 		
 	void Start ()
 	{
-		//Sets array to -1s
-		//------------------
-		for (int o = 0; o < acolor.Length; o++) {
-			acolor [o] = -1;
-		}
-		//-----------------
-
 		MakeLine (2);
 	}
+
+
+
+	/*public float waitTime =1f;
+	float timer;
+
+	void Update () 
+	{
+		timer += Time.deltaTime;
+		if (timer > waitTime) {
+			
+			//Sets array to -1s
+			//------------------
+			for (int o = 0; o < acolor.Length; o++) {
+				acolor [o] = -1;
+			}
+			//-----------------
+
+			MakeLine (2);
+			timer = -2.5f;
+		}
+	}*/
 		
 
 
@@ -39,6 +56,7 @@ public class BoxCreation : MonoBehaviour {
 		for (int a = 0; a < 5; a++) 
 		{
 			for (int i = 0; i < Division; i++) {
+
 				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), 6+(2.5f*a), Default, Division);
 			}
 

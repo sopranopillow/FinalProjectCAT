@@ -30,8 +30,8 @@ public class Square : MonoBehaviour {
 
 			//Restart Loop
 			if (transform.position == new Vector3 (transform.position.x, -5.66f, 0f)) {
-				transform.position = new Vector3 (transform.position.x, 6.4f, 0f);
-				//Destroy(gameObject);
+				//transform.position = new Vector3 (transform.position.x, 6.4f, 0f);
+				Destroy(gameObject);
 			}
 
 			//Speed
