@@ -11,6 +11,15 @@ public class BoxCreation : MonoBehaviour {
 	public GameObject prefab_5;
 	public GameObject prefab_6;
 
+	//Cuantas lineas por cada division
+	public int[] amount  = new int[4];
+
+	//Contador de cada grupo de lineas
+	public int[] timesToCreate  = new int[4];
+
+	//Tiempo de espera entre lineas
+	public float waitTime =1f;
+
 	public float x;
 	public float y;
 
@@ -24,54 +33,57 @@ public class BoxCreation : MonoBehaviour {
 		
 	void Start ()
 	{
-		MakeLine (2);
+		timesToCreate [0] = amount [0];
+		timesToCreate [1] = amount [1];
+		timesToCreate [2] = amount [2];
+		timesToCreate [3] = amount [3];
+		InvokeRepeating ("MakeLine", waitTime, waitTime);
 	}
 
-
-
-	/*public float waitTime =1f;
-	float timer;
-
-	void Update () 
+	public int getDiv()
 	{
-		timer += Time.deltaTime;
-		if (timer > waitTime) {
-			
-			//Sets array to -1s
-			//------------------
-			for (int o = 0; o < acolor.Length; o++) {
-				acolor [o] = -1;
+		if (timesToCreate [0] == 0) {
+			if (timesToCreate [1] == 0) {
+				if (timesToCreate [2] == 0) {
+					if (timesToCreate [3] == 0) {
+						return 6;
+						Debug.Log("Flag 4");
+					}else {
+						timesToCreate [3] = timesToCreate [3]-1;
+						return 5;
+						Debug.Log("Flag 3");
+					}
+				}else {
+					timesToCreate [2] = timesToCreate [2]-1;
+					return 4;
+					Debug.Log("Flag 2");
+				}
+			} else {
+				timesToCreate [1] = timesToCreate [1]-1;
+				return 3;
+				Debug.Log("Flag 1");
 			}
-			//-----------------
-
-			MakeLine (2);
-			timer = -2.5f;
+		} else {
+			timesToCreate [0] = timesToCreate [0]-1;
+			return 2;
+			Debug.Log("Flag 0");
 		}
-	}*/
-		
+	}
 
-
-	public void MakeLine(int Division)
+	public void MakeLine()
 	{
-		for (int a = 0; a < 5; a++) 
+		int Division = getDiv();
+
+		for (int i = 0; i < Division; i++) 
 		{
-			for (int i = 0; i < Division; i++) {
-
-				MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), 6+(2.5f*a), Default, Division);
-			}
-
-			//Resets acolor array to -1 and acount to 0
-			for (int o = 0; o < acolor.Length; o++) {
-				acolor [o] = -1;
-			}
-			acount = 0;
-
-			//Increases division
-			Division++;
-
-
-
+			MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), Default, Division);
 		}
+
+		//Resets acolor array to -1 and acount to 0
+		for (int o = 0; o < acolor.Length; o++) {
+			acolor [o] = -1;
+		}
+		acount = 0;
 	}
 
 	public float getX(int Division)
@@ -120,7 +132,7 @@ public class BoxCreation : MonoBehaviour {
 		return 0;
 	}
 
-	public void MakeRandomSquare(float xPos, float yPos, Sprite[] def, int division)
+	public void MakeRandomSquare(float xPos, Sprite[] def, int division)
 	{
 
 		int arrayIndex = Random.Range (0, def.Length);
@@ -142,7 +154,7 @@ public class BoxCreation : MonoBehaviour {
 
 		GameObject newSquare = Instantiate (getPrefab (division));
 		newSquare.name = color;
-		newSquare.transform.position = new Vector3 (xPos, yPos, 0);
+		newSquare.transform.position = new Vector3 (xPos, y, 0);
 		newSquare.GetComponent<Square> ().Color = color;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
 
