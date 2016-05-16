@@ -8,36 +8,38 @@ public class Square : MonoBehaviour {
 	public Transform myTransform;
 
 	private Vector3 firstpos;
-	private float duration;
+	public float duration;
 
-	private float limitSpeed;
+	public float speed;//0.008
 
-		void Awake()
-		{
-			myTransform = transform;
+	public float limitSpeed;
+
+	void Awake()
+	{
+		myTransform = transform;
 			
-		}
+	}
 
-		void Start ()
-		{
-		limitSpeed = 10f;
-		duration = 1f;
+	void Start ()
+	{
+		limitSpeed = 1f;
+		duration = GameObject.FindGameObjectWithTag ("Background").GetComponent<ScrollingB>().speed;
 		firstpos = transform.position;
-		}
+	}
 
-		void Update () {
+	void Update () 
+	{
 		transform.position = Vector3.MoveTowards(transform.position, new Vector3 (transform.position.x, -5.66f, 0f), Time.deltaTime*duration);
 
-			//Restart Loop
-			if (transform.position == new Vector3 (transform.position.x, -5.66f, 0f)) {
-				//transform.position = new Vector3 (transform.position.x, 6.4f, 0f);
-				Destroy(gameObject);
-			}
-
-			//Speed
-			if (duration < limitSpeed) {
-				duration += .008f;
-			}
-
+		//Restart Loop
+		if (transform.position == new Vector3 (transform.position.x, -5.66f, 0f)) {
+			//transform.position = new Vector3 (transform.position.x, 6.4f, 0f);
+			Destroy(gameObject);
 		}
+
+		//Speed
+		if (duration < limitSpeed) {
+			duration += 0.008f;
+		}
+	}
 }

@@ -26,10 +26,6 @@ public class BoxCreation : MonoBehaviour {
 	int[] acolor = new int [6];
 
 	int acount=0;
-
-	int boxcount=2;
-
-
 		
 	void Start ()
 	{
@@ -154,7 +150,7 @@ public class BoxCreation : MonoBehaviour {
 
 		GameObject newSquare = Instantiate (getPrefab (division));
 		newSquare.name = color;
-		newSquare.transform.position = new Vector3 (xPos, y, 0);
+		newSquare.transform.position = new Vector3 (xPos, y, 0.2f);
 		newSquare.GetComponent<Square> ().Color = color;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
 
