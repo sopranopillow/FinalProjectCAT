@@ -11,6 +11,12 @@ public class BoxCreation : MonoBehaviour {
 	public GameObject prefab_5;
 	public GameObject prefab_6;
 
+	public float Duration;
+	public float limitDuration;
+	public float Speed;
+
+	public float wait;
+
 	//Cuantas lineas por cada division
 	public int[] amount  = new int[4];
 
@@ -26,7 +32,7 @@ public class BoxCreation : MonoBehaviour {
 	int[] acolor = new int [6];
 
 	int acount=0;
-		
+
 	void Start ()
 	{
 		timesToCreate [0] = amount [0];
@@ -34,6 +40,10 @@ public class BoxCreation : MonoBehaviour {
 		timesToCreate [2] = amount [2];
 		timesToCreate [3] = amount [3];
 		InvokeRepeating ("MakeLine", waitTime, waitTime);
+	}
+
+	void Update()
+	{
 	}
 
 	public int getDiv()
@@ -79,7 +89,15 @@ public class BoxCreation : MonoBehaviour {
 		for (int o = 0; o < acolor.Length; o++) {
 			acolor [o] = -1;
 		}
-		acount = 0;
+		acount = 0; 
+		if (Duration > limitDuration)
+		{
+			Duration -= Speed;
+			if(waitTime >0.5f)
+			waitTime -= wait;
+		}
+		CancelInvoke ("MakeLine");
+		InvokeRepeating ("MakeLine", waitTime, waitTime);
 	}
 
 	public float getX(int Division)
@@ -152,6 +170,9 @@ public class BoxCreation : MonoBehaviour {
 		newSquare.name = color;
 		newSquare.transform.position = new Vector3 (xPos, y, 0.2f);
 		newSquare.GetComponent<Square> ().Color = color;
+		newSquare.GetComponent<Square> ().Speed = Speed;
+		newSquare.GetComponent<Square> ().Duration = Duration;
+		newSquare.GetComponent<Square> ().limitDuration = limitDuration;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
 
 	}

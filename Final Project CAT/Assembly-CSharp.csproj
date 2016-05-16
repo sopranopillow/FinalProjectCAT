@@ -45,9 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BallName.cs" />
-     <Compile Include="Assets\ColorChangePlayer.cs" />
+     <Compile Include="Assets\Scripts\BallName.cs" />
      <Compile Include="Assets\Scripts\BoxCreation.cs" />
+     <Compile Include="Assets\Scripts\ColorChangePlayer.cs" />
      <Compile Include="Assets\Scripts\GetMousePos.cs" />
      <Compile Include="Assets\Scripts\ScrollingB.cs" />
      <Compile Include="Assets\Scripts\Square.cs" />
