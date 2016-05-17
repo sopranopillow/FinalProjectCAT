@@ -15,8 +15,8 @@ public class Square : MonoBehaviour {
 
 	public Transform myTransform;
 
-	private Vector2 Destination;
-	private Vector2 startPos;
+	private Vector3 Destination;
+	private Vector3 startPos;
 
 	public float Speed;
 	public float limitDuration;
@@ -34,7 +34,7 @@ public class Square : MonoBehaviour {
 		duration = 1f;
 		firstpos = transform.position;*/
 		startPos = transform.position;
-		Destination = new Vector2 (transform.position.x, -5.66f);
+		Destination = new Vector3 (transform.position.x, -5.66f);
 	}
 
 	void Update () {
@@ -50,7 +50,7 @@ public class Square : MonoBehaviour {
 		if (duration < limitSpeed) {
 			duration += .008f;
 		}*/
-		transform.position = Vector2.Lerp(gameObject.transform.position, Destination, 1/(Duration*(Vector2.Distance(gameObject.transform.position, Destination))));
+		transform.position = Vector3.Lerp(gameObject.transform.position, Destination, 1/(Duration*(Vector3.Distance(gameObject.transform.position, Destination))));
 
 		if (transform.position.y == Destination.y)
 			Destroy (gameObject);
