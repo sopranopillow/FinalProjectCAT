@@ -90,6 +90,9 @@ public class BoxCreation : MonoBehaviour {
 			acolor [o] = -1;
 		}
 		acount = 0; 
+
+
+		//Speed
 		if (Duration > limitDuration)
 		{
 			Duration -= Speed;
@@ -102,6 +105,7 @@ public class BoxCreation : MonoBehaviour {
 					waitTime -= wait;
 			}
 		}
+
 		CancelInvoke ("MakeLine");
 		InvokeRepeating ("MakeLine", waitTime, waitTime);
 	}
