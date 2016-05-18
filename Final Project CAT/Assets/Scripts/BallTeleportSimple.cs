@@ -5,20 +5,47 @@ public class BallTeleportSimple : MonoBehaviour {
 
 	Vector3 newPosition;
 
+	public Sprite[] PTextures;
+
 
 	void Start(){
-		newPosition = transform.position;
 	}
 
 	void Update(){
+
+		//References BallName
+		GameObject ball = GameObject.FindGameObjectWithTag ("Player");
+		BallName nameb= ball.GetComponent<BallName>();
+		string Ballcolorstring= nameb.ColorP;
+
+
+		//References ColorChangePlayer
+		ColorChangePlayer changecol = ball.GetComponent<ColorChangePlayer>();
+
+
+		//References Square
+		GameObject square = GameObject.FindGameObjectWithTag ("Obstacle");
+		Square namesq= square.GetComponent<Square>();
+		string Squarecolorstring = namesq.Color;
+		Vector3 Squarepos = namesq.myTransform.position;
+
+		//Checking Purposes
+		Debug.Log(Ballcolorstring.Equals(Squarecolorstring));
+		Debug.Log(Ballcolorstring);
+		Debug.Log(Squarecolorstring);
+
+		//Mouse Click
 		if (Input.GetMouseButtonDown (0)) {
-			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			if (Physics.Raycast (ray, out hit)) {
-				newPosition = new Vector3(hit.point.x, hit.point.y, -0.5f);
+			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
+	
+			if (hit.collider.isTrigger/*&&(Ballcolor.Equals(Squarecolor)==true)*/) {
+				newPosition = new Vector3 (Squarepos.x,Squarepos.y+.2f,0f);
 				transform.position = newPosition;
+				changecol.changecolor(PTextures);
 			}
 		}
 	}
+		
 
 }
