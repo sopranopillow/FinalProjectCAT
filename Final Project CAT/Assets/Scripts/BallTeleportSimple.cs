@@ -37,10 +37,11 @@ public class BallTeleportSimple : MonoBehaviour {
 		//Mouse Click
 		if (Input.GetMouseButtonDown (0)) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
+			RaycastHit2D hit = Physics2D.GetRayIntersection(ray,Mathf.Infinity);
 	
 			if (hit.collider.isTrigger/*&&(Ballcolor.Equals(Squarecolor)==true)*/) {
-				newPosition = new Vector3 (Squarepos.x,Squarepos.y+.2f,0f);
+				newPosition= new Vector3(hit.collider.transform.position.x,hit.collider.transform.position.y+0.2f, 0f);
+				//newPosition = new Vector3 (Squarepos.x,Squarepos.y+.2f,0f);
 				transform.position = newPosition;
 				changecol.changecolor(PTextures);
 			}

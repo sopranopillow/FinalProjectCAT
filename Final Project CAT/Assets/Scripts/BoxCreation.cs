@@ -29,9 +29,10 @@ public class BoxCreation : MonoBehaviour {
 	public float x;
 	public float y;
 
-	int[] acolor = new int [6];
+	//public int[] playercolor = new int [6];
 
-	int acount=0;
+	public int[] acolor = new int [6];
+	public int acount=0;
 
 	void Start ()
 	{
@@ -84,6 +85,10 @@ public class BoxCreation : MonoBehaviour {
 		{
 			MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), Default, Division);
 		}
+
+		/*for (int o = 0; o < playercolor.Length; o++) {
+			playercolor [o] = acolor [o];
+		}*/ 
 
 		//Resets acolor array to -1 and acount to 0
 		for (int o = 0; o < acolor.Length; o++) {

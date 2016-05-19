@@ -15,8 +15,10 @@ public class ColorChangePlayer : MonoBehaviour {
 
 	public void changecolor(Sprite[] def)
 	{
-		int arrayIndex = Random.Range (0, def.Length);
+		//int[] colrandom = GameObject.FindGameObjectWithTag ("Player").GetComponent<BoxCreation> ().playercolor;
 
+		int arrayIndex = Random.Range (0, def.Length);
+		Debug.Log (arrayIndex);
 
 		Sprite playerSprite = def [arrayIndex];
 		string colorptex = getName (arrayIndex);
