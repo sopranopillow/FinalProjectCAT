@@ -3,9 +3,11 @@ using System.Collections;
 
 public class BallTeleportSimple : MonoBehaviour {
 
-	Vector3 newPosition;
+	Vector3 newPosition= new Vector3(0f, -5f, 0f);
 
 	public Sprite[] PTextures;
+
+	public bool checktele=false;
 
 
 	void Start(){
@@ -36,17 +38,23 @@ public class BallTeleportSimple : MonoBehaviour {
 
 		//Mouse Click
 		if (Input.GetMouseButtonDown (0)) {
+			checktele = true;
+
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.GetRayIntersection(ray,Mathf.Infinity);
 	
-			if (hit.collider.isTrigger/*&&(Ballcolor.Equals(Squarecolor)==true)*/) {
-				newPosition= new Vector3(hit.collider.transform.position.x,hit.collider.transform.position.y+0.2f, 0f);
-				//newPosition = new Vector3 (Squarepos.x,Squarepos.y+.2f,0f);
-				transform.position = newPosition;
+			if (hit.collider.isTrigger/*&&(Ballcolorstring.Equals(Squarecolorstring)==true)*/) {
+				newPosition= new Vector3(hit.collider.transform.position.x,hit.collider.transform.position.y+0.1f, 0f);
+				//gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, newPosition, 2f*Time.deltaTime);
+				//transform.position = Vector3.Lerp(transform.position, newPosition, 5*Time.deltaTime) ;
 				changecol.changecolor(PTextures);
 			}
 		}
+
+		//Smooth Movement
+		if (checktele == true) {
+			transform.position = Vector3.MoveTowards (transform.position,newPosition /*square.transform.position*/, 20 * Time.deltaTime);
+		}
 	}
-		
 
 }
