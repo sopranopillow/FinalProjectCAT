@@ -9,6 +9,10 @@ public class QuitApplication : MonoBehaviour {
 	#if UNITY_STANDALONE
 		//Quit the application
 		Application.Quit();
+
+	#elif (UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8)
+		Application.Quit();
+
 	#endif
 
 		//If we are running in the editor
