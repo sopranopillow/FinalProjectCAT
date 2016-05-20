@@ -45,14 +45,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\DontDestroy.cs" />
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\EventSystemChecker.cs" />
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\Pause.cs" />
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\PlayMusic.cs" />
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" />
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\SetAudioLevels.cs" />
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\ShowPanels.cs" />
+     <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
      <Compile Include="Assets\Scripts\BallName.cs" />
      <Compile Include="Assets\Scripts\BallTeleportSimple.cs" />
      <Compile Include="Assets\Scripts\BoxCreation.cs" />
      <Compile Include="Assets\Scripts\ColorChangePlayer.cs" />
-     <Compile Include="Assets\Scripts\GetMousePos.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\ScrollingB.cs" />
      <Compile Include="Assets\Scripts\Square.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
+     <None Include="Assets\Game Jam Menu Template\Fonts\OpenSans\License!.txt" />
+     <None Include="Assets\Game Jam Menu Template\GameJamTemplateReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

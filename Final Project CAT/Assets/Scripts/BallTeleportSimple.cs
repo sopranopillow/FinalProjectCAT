@@ -9,7 +9,6 @@ public class BallTeleportSimple : MonoBehaviour {
 
 	public bool checktele=false;
 
-
 	void Start(){
 	}
 
@@ -48,6 +47,8 @@ public class BallTeleportSimple : MonoBehaviour {
 				//gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, newPosition, 2f*Time.deltaTime);
 				//transform.position = Vector3.Lerp(transform.position, newPosition, 5*Time.deltaTime) ;
 				changecol.changecolor(PTextures);
+				GameObject score = GameObject.FindGameObjectWithTag ("ScoreText");
+				score.GetComponent<Score> ().Scores += 1;
 			}
 		}
 
