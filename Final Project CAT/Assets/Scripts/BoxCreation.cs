@@ -17,6 +17,8 @@ public class BoxCreation : MonoBehaviour {
 
 	public float wait;
 
+	private int Groups = 1;
+
 	//Cuantas lineas por cada division
 	public int[] amount  = new int[4];
 
@@ -111,6 +113,8 @@ public class BoxCreation : MonoBehaviour {
 			}
 		}
 
+		Groups++;
+
 		CancelInvoke ("MakeLine");
 		InvokeRepeating ("MakeLine", waitTime, waitTime);
 	}
@@ -186,6 +190,7 @@ public class BoxCreation : MonoBehaviour {
 		newSquare.transform.position = new Vector3 (xPos, y, 0.2f);
 		newSquare.GetComponent<Square> ().Color = color;
 		newSquare.GetComponent<Square> ().Speed = Speed;
+		newSquare.GetComponent<Square> ().Groups = Groups;
 		newSquare.GetComponent<Square> ().Duration = Duration;
 		newSquare.GetComponent<Square> ().limitDuration = limitDuration;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;

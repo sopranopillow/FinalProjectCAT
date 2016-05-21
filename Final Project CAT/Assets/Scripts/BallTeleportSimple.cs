@@ -7,6 +7,8 @@ public class BallTeleportSimple : MonoBehaviour {
 
 	public Sprite[] PTextures;
 
+	public Camera cam;
+
 	public bool checktele=false;
 
 	void Start(){
@@ -42,10 +44,14 @@ public class BallTeleportSimple : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.GetRayIntersection(ray,Mathf.Infinity);
 	
-			if (hit.collider.isTrigger/*&&(Ballcolorstring.Equals(Squarecolorstring)==true)*/) {
+			if (hit.collider.isTrigger/* &&(Ballcolorstring.Equals(Squarecolorstring)==true)*/) {
 				newPosition= new Vector3(hit.collider.transform.position.x,hit.collider.transform.position.y+0.1f, 0f);
 				//gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, newPosition, 2f*Time.deltaTime);
 				//transform.position = Vector3.Lerp(transform.position, newPosition, 5*Time.deltaTime) ;
+
+				cam.GetComponent<GlobalProperties>().currentGroup = hit.collider.gameObject.GetComponent<Square> ().Groups;
+				cam.GetComponent<GlobalProperties> ().currentSquare = hit.collider.gameObject;
+
 				changecol.changecolor(PTextures);
 				GameObject score = GameObject.FindGameObjectWithTag ("ScoreText");
 				score.GetComponent<Score> ().Scores += 1;
@@ -56,6 +62,8 @@ public class BallTeleportSimple : MonoBehaviour {
 		if (checktele == true) {
 			transform.position = Vector3.MoveTowards (transform.position,newPosition /*square.transform.position*/, 50 * Time.deltaTime);
 		}
+
+		cam.GetComponent<GlobalProperties> ().changePos ();
 	}
 
 }

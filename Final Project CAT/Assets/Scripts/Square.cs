@@ -22,6 +22,8 @@ public class Square : MonoBehaviour {
 	public float limitDuration;
 	public float Duration;
 
+	public int Groups;
+
 	void Awake()
 	{
 		/*myTransform = transform;*/
