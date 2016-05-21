@@ -63,11 +63,16 @@ public class BallTeleportSimple : MonoBehaviour {
 
 				int ran = Random.Range (0,lines.Length);
 					
-				changecol.changecolors (PTextures, lines[ran].GetComponent<Square>().Color);
+
 				if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP) {
 					GameObject score = GameObject.FindGameObjectWithTag ("ScoreText");
 					score.GetComponent<Score> ().Scores += 1;
+				} else {
+					QuitApplication quit = new QuitApplication ();
+					quit.Quit ();
 				}
+
+				changecol.changecolors (PTextures, lines[ran].GetComponent<Square>().Color);
 				}
 			}
 
