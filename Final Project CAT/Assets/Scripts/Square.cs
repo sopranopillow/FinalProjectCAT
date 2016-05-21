@@ -21,6 +21,7 @@ public class Square : MonoBehaviour {
 	public float Speed;
 	public float limitDuration;
 	public float Duration;
+	public int Division;
 
 	public int Groups;
 

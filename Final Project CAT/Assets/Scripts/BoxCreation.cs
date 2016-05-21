@@ -15,6 +15,8 @@ public class BoxCreation : MonoBehaviour {
 	public float limitDuration;
 	public float Speed;
 
+	private bool firstTime = true;
+
 	public float wait;
 
 	private int Groups = 1;
@@ -27,6 +29,8 @@ public class BoxCreation : MonoBehaviour {
 
 	//Tiempo de espera entre lineas
 	public float waitTime =1f;
+
+	public GameObject ball;
 
 	public float x;
 	public float y;
@@ -112,7 +116,15 @@ public class BoxCreation : MonoBehaviour {
 					waitTime -= wait;
 			}
 		}
-
+		if(firstTime == true){
+			GameObject[] objs = GameObject.FindGameObjectsWithTag ("Obstacle");
+			int ran = Random.Range (0,objs.Length);
+			GameObject change = objs [ran];
+			ball.name = change.GetComponent<Square>().Color;
+			ball.GetComponent<BallName> ().ColorP = change.GetComponent<Square>().Color;
+			ball.GetComponent<SpriteRenderer> ().sprite = ball.GetComponent<ColorChangePlayer>().getSprite(change.GetComponent<Square>().Color);
+			firstTime = false;
+		}
 		Groups++;
 
 		CancelInvoke ("MakeLine");
@@ -178,6 +190,7 @@ public class BoxCreation : MonoBehaviour {
 				arrayIndex = Random.Range (0, def.Length);
 			}
 		}
+
 		acolor[acount]=arrayIndex;
 		acount++;
 		//--------------------------
@@ -192,6 +205,7 @@ public class BoxCreation : MonoBehaviour {
 		newSquare.GetComponent<Square> ().Speed = Speed;
 		newSquare.GetComponent<Square> ().Groups = Groups;
 		newSquare.GetComponent<Square> ().setWidth(getWidth(division));
+		newSquare.GetComponent<Square> ().Division = division;
 		newSquare.GetComponent<Square> ().Duration = Duration;
 		newSquare.GetComponent<Square> ().limitDuration = limitDuration;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
