@@ -6,10 +6,10 @@ public class GlobalProperties : MonoBehaviour {
 	public GameObject currentSquare;
 	public GameObject ball;
 
-	public void changePos()
+	public Vector3 changePos()
 	{
 		if (currentGroup > 0) {
-			ball.transform.position = new Vector3 (ball.GetComponent<BallTeleportSimple>().transform.position.x, currentSquare.transform.position.y+0.5f, ball.GetComponent<BallTeleportSimple>().transform.position.z);
-		}
+			return  new Vector3 (currentSquare.transform.position.x+(currentSquare.GetComponent<Square>().getWidth()/10), currentSquare.transform.position.y+0.5f, ball.GetComponent<BallTeleportSimple>().transform.position.z);
+		}return ball.transform.position;
 	}
 }

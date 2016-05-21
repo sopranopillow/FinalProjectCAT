@@ -60,10 +60,9 @@ public class BallTeleportSimple : MonoBehaviour {
 
 		//Smooth Movement
 		if (checktele == true) {
-			transform.position = Vector3.MoveTowards (transform.position,newPosition /*square.transform.position*/, 50 * Time.deltaTime);
+			transform.position = Vector3.MoveTowards (transform.position, newPosition /*square.transform.position*/, 35 * Time.deltaTime);
 		}
-
-		cam.GetComponent<GlobalProperties> ().changePos ();
+		newPosition = cam.GetComponent<GlobalProperties> ().changePos ();
 	}
 
 }

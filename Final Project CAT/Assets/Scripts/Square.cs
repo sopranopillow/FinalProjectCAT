@@ -24,10 +24,22 @@ public class Square : MonoBehaviour {
 
 	public int Groups;
 
+	private float width;
+
 	void Awake()
 	{
 		/*myTransform = transform;*/
 		myTransform = transform;
+	}
+
+	public float getWidth()
+	{
+		return width;
+	}
+
+	public void setWidth(float wid)
+	{
+		width = wid;
 	}
 
 	void Start ()

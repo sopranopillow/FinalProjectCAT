@@ -191,6 +191,7 @@ public class BoxCreation : MonoBehaviour {
 		newSquare.GetComponent<Square> ().Color = color;
 		newSquare.GetComponent<Square> ().Speed = Speed;
 		newSquare.GetComponent<Square> ().Groups = Groups;
+		newSquare.GetComponent<Square> ().setWidth(getWidth(division));
 		newSquare.GetComponent<Square> ().Duration = Duration;
 		newSquare.GetComponent<Square> ().limitDuration = limitDuration;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
