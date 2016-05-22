@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 public class BallTeleportSimple : MonoBehaviour {
 
 	Vector3 newPosition= new Vector3(0f, -5f, 0f);
+	Vector3 defpos;
 
 	public Sprite[] PTextures;
 
 	public Camera cam;
 
 	public bool checktele=false;
+	public bool playercrush=true;
 
 	void Start(){
+		defpos= transform.position;
 	}
 
 	void Update(){
@@ -84,12 +87,27 @@ public class BallTeleportSimple : MonoBehaviour {
 			if (checktele == true) {
 				transform.position = Vector3.MoveTowards (transform.position, newPosition /*square.transform.position*/, 35 * Time.deltaTime);
 			}
-		if (transform.position.y < -5.1)
-		{
-			SceneManager.LoadScene("Game");
-		//	QuitApplication quit = new QuitApplication ();
-		//	quit.Quit ();//Se supone que aqui va GameOverScene.Load();
-		}
+
+			if (transform.position.y < -5.1)
+			{
+				SceneManager.LoadScene("Game");
+			//	QuitApplication quit = new QuitApplication ();
+			//	quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+			}
+
+
+			Debug.Log (square.transform.position.y);
+			Debug.Log (transform.position.y);
+			Debug.Log (defpos.y);
+
+			if (transform.position.y.Equals(defpos.y)) {
+				if (square.transform.position.y < transform.position.y) {
+					SceneManager.LoadScene("Game");
+					//	QuitApplication quit = new QuitApplication ();
+					//	quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+				}
+			}
+
 			newPosition = cam.GetComponent<GlobalProperties> ().changePos ();
 	}
 

@@ -2,30 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BallTeleportSimple.cs">
     <Files>
+      <File FileName="Assets\Scripts\BoxCreation.cs" Line="8" Column="29" />
       <File FileName="Assets\Scripts\Square.cs" Line="34" Column="3" />
-      <File FileName="Assets\Scripts\BallTeleportSimple.cs" Line="74" Column="5" />
+      <File FileName="Assets\Scripts\BallTeleportSimple.cs" Line="91" Column="5" />
       <File FileName="Assets\Scripts\GlobalProperties.cs" Line="11" Column="10" />
-      <File FileName="Assets\Scripts\BoxCreation.cs" Line="203" Column="37" />
-      <File FileName="Assets\Scripts\ColorChangePlayer.cs" Line="12" Column="71" />
+      <File FileName="Assets\Scripts\ColorChangePlayer.cs" Line="45" Column="18" />
       <File FileName="Assets\Scripts\ScrollingB.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" Line="15" Column="3" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Final Project CAT" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Game Jam Menu Template" expanded="True">
-                <Node name="Scripts" expanded="True" />
-              </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="BallTeleportSimple.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
