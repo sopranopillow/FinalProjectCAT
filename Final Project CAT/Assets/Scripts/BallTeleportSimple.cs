@@ -37,9 +37,9 @@ public class BallTeleportSimple : MonoBehaviour {
 			Vector3 Squarepos = namesq.myTransform.position;
 
 			//Checking Purposes
-			Debug.Log (Ballcolorstring.Equals (Squarecolorstring));
+			/*Debug.Log (Ballcolorstring.Equals (Squarecolorstring));
 			Debug.Log (Ballcolorstring);
-			Debug.Log (Squarecolorstring);
+			Debug.Log (Squarecolorstring);*/
 
 			//Mouse Click
 			if (Input.GetMouseButtonDown (0)) {
@@ -76,7 +76,7 @@ public class BallTeleportSimple : MonoBehaviour {
 				} else {
 					//QuitApplication quit = new QuitApplication ();
 					//quit.Quit ();//Se supone que aqui va GameOverScene.Load();
-					SceneManager.LoadScene("Game");
+					DoGO();
 				}
 
 				changecol.changecolors (PTextures, lines[ran].GetComponent<Square>().Color);
@@ -90,25 +90,27 @@ public class BallTeleportSimple : MonoBehaviour {
 
 			if (transform.position.y < -5.1)
 			{
-				SceneManager.LoadScene("Game");
+			DoGO ();
 			//	QuitApplication quit = new QuitApplication ();
 			//	quit.Quit ();//Se supone que aqui va GameOverScene.Load();
 			}
 
 
-			Debug.Log (square.transform.position.y);
+			/*Debug.Log (square.transform.position.y);
 			Debug.Log (transform.position.y);
-			Debug.Log (defpos.y);
+			Debug.Log (defpos.y);*/
 
 			if (transform.position.y.Equals(defpos.y)) {
 				if (square.transform.position.y < transform.position.y) {
-					SceneManager.LoadScene("Game");
-					//	QuitApplication quit = new QuitApplication ();
-					//	quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+				DoGO ();
 				}
 			}
 
 			newPosition = cam.GetComponent<GlobalProperties> ().changePos ();
 	}
 
+	public void DoGO()
+	{
+		ShowGameOver.show = true;
+	}
 }
