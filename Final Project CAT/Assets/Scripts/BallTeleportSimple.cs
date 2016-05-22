@@ -82,6 +82,11 @@ public class BallTeleportSimple : MonoBehaviour {
 			if (checktele == true) {
 				transform.position = Vector3.MoveTowards (transform.position, newPosition /*square.transform.position*/, 35 * Time.deltaTime);
 			}
+		if (transform.position.y < -5.1)
+		{
+			QuitApplication quit = new QuitApplication ();
+			quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+		}
 			newPosition = cam.GetComponent<GlobalProperties> ().changePos ();
 	}
 

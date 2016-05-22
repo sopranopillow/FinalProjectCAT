@@ -6,11 +6,6 @@ public class GlobalProperties : MonoBehaviour {
 	public GameObject currentSquare;
 	public GameObject ball;
 
-	public int getDivision()
-	{
-		return currentSquare.GetComponent<Square> ().Division;
-	}
-
 	public Vector3 changePos()
 	{
 		if (currentGroup > 0) {
