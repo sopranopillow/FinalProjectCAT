@@ -267,7 +267,7 @@ public class BoxCreation : MonoBehaviour {
 			return "BROWN";
 			break;
 		case 9:
-			return "LILA";
+			return "DARKGREEN";
 			break;
 		case 10:
 			return "AQUA";

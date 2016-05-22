@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class BallTeleportSimple : MonoBehaviour {
 
@@ -70,8 +71,9 @@ public class BallTeleportSimple : MonoBehaviour {
 					GameObject score = GameObject.FindGameObjectWithTag ("ScoreText");
 					score.GetComponent<Score> ().Scores += 1;
 				} else {
-					QuitApplication quit = new QuitApplication ();
-					quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+					//QuitApplication quit = new QuitApplication ();
+					//quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+					SceneManager.LoadScene("Game");
 				}
 
 				changecol.changecolors (PTextures, lines[ran].GetComponent<Square>().Color);
@@ -84,8 +86,9 @@ public class BallTeleportSimple : MonoBehaviour {
 			}
 		if (transform.position.y < -5.1)
 		{
-			QuitApplication quit = new QuitApplication ();
-			quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+			SceneManager.LoadScene("Game");
+		//	QuitApplication quit = new QuitApplication ();
+		//	quit.Quit ();//Se supone que aqui va GameOverScene.Load();
 		}
 			newPosition = cam.GetComponent<GlobalProperties> ().changePos ();
 	}

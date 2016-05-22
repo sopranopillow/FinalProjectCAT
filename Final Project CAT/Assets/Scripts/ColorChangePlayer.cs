@@ -42,7 +42,7 @@ public class ColorChangePlayer : MonoBehaviour {
 		case "BROWN":
 			return PTextures [8];
 			break;
-		case "LILA":
+		case "DARKGREEN":
 			return PTextures [9];
 			break;
 		case "AQUA":
