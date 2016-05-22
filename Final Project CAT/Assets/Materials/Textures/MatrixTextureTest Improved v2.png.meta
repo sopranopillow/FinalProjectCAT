@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: a7addc91b3ac04540b6f367d8f9b1aba
+timeCreated: 1463929509
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MatrixTextureTest Improved v2_0
+    21300002: MatrixTextureTest Improved v2_1
+    21300004: MatrixTextureTest Improved v2_2
+    21300006: MatrixTextureTest Improved v2_3
+    21300008: MatrixTextureTest Improved v2_4
+    21300010: MatrixTextureTest Improved v2_5
+    21300012: MatrixTextureTest Improved v2_6
+    21300014: MatrixTextureTest Improved v2_7
+    21300016: MatrixTextureTest Improved v2_8
+    21300018: MatrixTextureTest Improved v2_9
+    21300020: MatrixTextureTest Improved v2_10
+    21300022: MatrixTextureTest Improved v2_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MatrixTextureTest Improved v2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 300
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    - name: MatrixTextureTest Improved v2_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 50}
+        - {x: -100, y: 50}
+        - {x: -100, y: -50}
+        - {x: 94, y: -50}
+        - {x: 99, y: -46}
+        - {x: 100, y: -45}
+        - {x: 100, y: 45}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
