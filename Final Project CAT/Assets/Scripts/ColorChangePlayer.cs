@@ -54,47 +54,4 @@ public class ColorChangePlayer : MonoBehaviour {
 		}
 		return PTextures[0];
 	}
-
-	public string getName(int ind)
-	{
-		switch (ind) {
-		case 0:
-			return "GREEN";
-			break;
-		case 1:
-			return "BLUE";
-			break;
-		case 2:
-			return "RED";
-			break;
-		case 3:
-			return "ORANGE";
-			break;
-		case 4:
-			return "PINK";
-			break;
-		case 5:
-			return "PURPLE";
-			break;
-		case 6:
-			return "YELLOW";
-			break;
-		case 7:
-			return "GRAY";
-			break;
-		case 8:
-			return "BROWN";
-			break;
-		case 9:
-			return "LILA";
-			break;
-		case 10:
-			return "AQUA";
-			break;
-		case 11:
-			return "WINE";
-			break;
-		}
-		return "RIP IN PIECES";
-	}
 }

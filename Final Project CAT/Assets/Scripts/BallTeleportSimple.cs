@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BallTeleportSimple : MonoBehaviour {
 
@@ -52,16 +53,17 @@ public class BallTeleportSimple : MonoBehaviour {
 					cam.GetComponent<GlobalProperties> ().currentSquare = hit.collider.gameObject;
 					
 				GameObject[] objects = GameObject.FindGameObjectsWithTag ("Obstacle");
-				GameObject[] lines = new GameObject[cam.GetComponent<GlobalProperties>().getDivision()];
+				List<GameObject> lines = new List<GameObject> ();
+
 				int count = 0;
 				for (int i = 0; i < objects.Length; i++) {
 					if (objects [i].GetComponent<Square> ().Groups == cam.GetComponent<GlobalProperties> ().currentGroup + 1) {
-						lines [count] = objects[i];
+						lines.Add(objects[i]);
 						count++;
 					}
 				}
 
-				int ran = Random.Range (0,lines.Length);
+				int ran = Random.Range (0,lines.Count);
 					
 
 				if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP) {
@@ -69,7 +71,7 @@ public class BallTeleportSimple : MonoBehaviour {
 					score.GetComponent<Score> ().Scores += 1;
 				} else {
 					QuitApplication quit = new QuitApplication ();
-					quit.Quit ();
+					quit.Quit ();//Se supone que aqui va GameOverScene.Load();
 				}
 
 				changecol.changecolors (PTextures, lines[ran].GetComponent<Square>().Color);
