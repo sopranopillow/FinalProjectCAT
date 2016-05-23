@@ -111,6 +111,6 @@ public class BallTeleportSimple : MonoBehaviour {
 
 	public void DoGO()
 	{
-		ShowGameOver.show = true;
+		ShowGameOver.showGameOver ();
 	}
 }

@@ -3,10 +3,11 @@ using System.Collections;
 
 public class ShowGameOver : MonoBehaviour {
 
-	private ShowPanels showPanels;	
-	private StartOptions startScript;
+	static ShowPanels showPanels;	
+	static StartOptions startScript;
 
 	public static bool show = false;
+	public static int count = 0;
 
 	void Awake()
 	{
@@ -15,18 +16,14 @@ public class ShowGameOver : MonoBehaviour {
 
 	}
 
-	void Update()
-	{
-		if (show == true)
-		{
-			showGameOver ();
-		}
-			
-	}
-
-	public void showGameOver ()
+	public static void showGameOver ()
 	{
 		Time.timeScale = 0;
-		showPanels.ShowGameOver ();
+		showPanels.GameOver ();
+	}
+
+	public static void hideGameOver ()
+	{
+		showPanels.HideGameOver ();
 	}
 }

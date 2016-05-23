@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ShowPanels : MonoBehaviour {
 
@@ -28,6 +29,7 @@ public class ShowPanels : MonoBehaviour {
 	public void ShowMenu()
 	{
 		menuPanel.SetActive (true);
+		ShowGameOver.hideGameOver ();
 	}
 
 	//Call this function to deactivate and hide the main menu panel during the main menu
@@ -43,10 +45,26 @@ public class ShowPanels : MonoBehaviour {
 		optionsTint.SetActive(true);
 	}
 
-	public void ShowGameOver()
+	public void GameOver()
 	{
 		gameOver.SetActive (true);
 		optionsTint.SetActive(true);
+	}
+
+	public void HideGameOver()
+	{
+		gameOver.SetActive (false);
+		optionsTint.SetActive(false);
+		Time.timeScale = 1;
+		SceneManager.LoadScene(0);
+	}
+
+	public void PlayAgain()
+	{
+		gameOver.SetActive (false);
+		optionsTint.SetActive(false);
+		Time.timeScale = 1;
+		SceneManager.LoadScene(1);
 	}
 
 	//Call this function to deactivate and hide the Pause panel during game play
