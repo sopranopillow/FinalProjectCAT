@@ -56,7 +56,8 @@ public class ShowPanels : MonoBehaviour {
 		gameOver.SetActive (false);
 		optionsTint.SetActive(false);
 		Time.timeScale = 1;
-		SceneManager.LoadScene(0);
+		SceneManager.LoadSceneAsync (0);
+		HideMenu ();
 	}
 
 	public void PlayAgain()
