@@ -49,7 +49,7 @@ public class Square : MonoBehaviour {
 		duration = 1f;
 		firstpos = transform.position;*/
 		startPos = transform.position;
-		Destination = new Vector3 (transform.position.x, -5.66f);
+		Destination = new Vector3 (transform.position.x, -7.5f);
 	}
 
 	void Update () {

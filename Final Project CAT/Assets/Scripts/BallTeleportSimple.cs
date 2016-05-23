@@ -88,7 +88,7 @@ public class BallTeleportSimple : MonoBehaviour {
 				transform.position = Vector3.MoveTowards (transform.position, newPosition /*square.transform.position*/, 35 * Time.deltaTime);
 			}
 
-			if (transform.position.y < -5.1)
+			if (transform.position.y < -5.8)
 			{
 			DoGO ();
 			//	QuitApplication quit = new QuitApplication ();
