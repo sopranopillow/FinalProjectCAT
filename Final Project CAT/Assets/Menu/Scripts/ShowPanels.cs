@@ -47,6 +47,7 @@ public class ShowPanels : MonoBehaviour {
 
 	public void GameOver()
 	{
+		
 		gameOver.SetActive (true);
 		optionsTint.SetActive(true);
 	}
@@ -56,7 +57,7 @@ public class ShowPanels : MonoBehaviour {
 		gameOver.SetActive (false);
 		optionsTint.SetActive(false);
 		Time.timeScale = 1;
-		SceneManager.LoadSceneAsync (0);
+		SceneManager.LoadScene (0);
 		HideMenu ();
 	}
 

@@ -45,15 +45,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\DontDestroy.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\EventSystemChecker.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\Pause.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\PlayMusic.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\SetAudioLevels.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\ShowGameOver.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\ShowPanels.cs" />
-     <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
+     <Compile Include="Assets\Menu\Scripts\DontDestroy.cs" />
+     <Compile Include="Assets\Menu\Scripts\EventSystemChecker.cs" />
+     <Compile Include="Assets\Menu\Scripts\Pause.cs" />
+     <Compile Include="Assets\Menu\Scripts\PlayMusic.cs" />
+     <Compile Include="Assets\Menu\Scripts\QuitApplication.cs" />
+     <Compile Include="Assets\Menu\Scripts\SetAudioLevels.cs" />
+     <Compile Include="Assets\Menu\Scripts\ShowGameOver.cs" />
+     <Compile Include="Assets\Menu\Scripts\ShowPanels.cs" />
+     <Compile Include="Assets\Menu\Scripts\StartOptions.cs" />
      <Compile Include="Assets\Scripts\BallName.cs" />
      <Compile Include="Assets\Scripts\BallTeleportSimple.cs" />
      <Compile Include="Assets\Scripts\BoxCreation.cs" />
@@ -63,8 +63,8 @@
      <Compile Include="Assets\Scripts\ScrollingB.cs" />
      <Compile Include="Assets\Scripts\Square.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
-     <None Include="Assets\Game Jam Menu Template\Fonts\OpenSans\License!.txt" />
-     <None Include="Assets\Game Jam Menu Template\GameJamTemplateReadMe.txt" />
+     <None Include="Assets\Menu\Fonts\OpenSans\License!.txt" />
+     <None Include="Assets\Menu\GameJamTemplateReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
