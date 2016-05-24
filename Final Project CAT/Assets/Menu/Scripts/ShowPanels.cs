@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject menuPanel;							//Store a reference to the Game Object MenuPanel 
 	public GameObject pausePanel;							//Store a reference to the Game Object PausePanel 
 	public GameObject gameOver;							//Store a reference to the Game Object PausePanel 
+	public GameObject ScoreText;
+	public GameObject TopScoreText;
 
 
 	//Call this function to activate and display the Options panel during the main menu
@@ -45,11 +48,27 @@ public class ShowPanels : MonoBehaviour {
 		optionsTint.SetActive(true);
 	}
 
-	public void GameOver()
+	public void GameOver(int score)
 	{
-		
 		gameOver.SetActive (true);
 		optionsTint.SetActive(true);
+
+		ScoreText = GameObject.FindGameObjectWithTag ("ScoreGO");
+		TopScoreText = GameObject.FindGameObjectWithTag ("TopScoreGO");
+
+		//checkScore
+		//if greater changetopscore
+
+		if (SaveLoad.GetScore() < score)
+		{
+			SaveLoad.SaveScore (score);
+			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score: "+score.ToString());
+			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top score: "+score.ToString ());
+		} else
+		{
+			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score: " + score.ToString());
+			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top Score: "+SaveLoad.GetScore().ToString());
+		}
 	}
 
 	public void HideGameOver()

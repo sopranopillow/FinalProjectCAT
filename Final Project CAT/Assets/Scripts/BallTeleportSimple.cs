@@ -15,8 +15,11 @@ public class BallTeleportSimple : MonoBehaviour {
 	public bool checktele=false;
 	public bool playercrush=true;
 
+	GameObject score;
+
 	void Start(){
 		defpos= transform.position;
+		score = GameObject.FindGameObjectWithTag ("ScoreText");
 	}
 
 	void Update(){
@@ -70,8 +73,7 @@ public class BallTeleportSimple : MonoBehaviour {
 				int ran = Random.Range (0,lines.Count);
 					
 
-				if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP) {
-					GameObject score = GameObject.FindGameObjectWithTag ("ScoreText");
+				if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP){
 					score.GetComponent<Score> ().Scores += 1;
 				} else {
 					//QuitApplication quit = new QuitApplication ();
@@ -111,6 +113,7 @@ public class BallTeleportSimple : MonoBehaviour {
 
 	public void DoGO()
 	{
-		ShowGameOver.showGameOver ();
+		ShowGameOver.showGameOver (score.GetComponent<Score>().Scores);
+
 	}
 }
