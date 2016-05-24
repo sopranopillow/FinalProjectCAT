@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Score : MonoBehaviour {
 
-	public int Scores=0;
+	public static int Scores=0;
 
 	private bool flagten = false;
 	private bool flaghund = false;

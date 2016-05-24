@@ -71,12 +71,11 @@ public class BallTeleportSimple : MonoBehaviour {
 					
 
 				if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP) {
-					GameObject score = GameObject.FindGameObjectWithTag ("ScoreText");
-					score.GetComponent<Score> ().Scores += 1;
+					Score.Scores += 1;
 				} else {
 					//QuitApplication quit = new QuitApplication ();
 					//quit.Quit ();//Se supone que aqui va GameOverScene.Load();
-					DoGO();
+					DoGO(Score.Scores);
 				}
 
 				changecol.changecolors (PTextures, lines[ran].GetComponent<Square>().Color);
@@ -90,7 +89,7 @@ public class BallTeleportSimple : MonoBehaviour {
 
 			if (transform.position.y < -5.8)
 			{
-			DoGO ();
+			DoGO (Score.Scores);
 			//	QuitApplication quit = new QuitApplication ();
 			//	quit.Quit ();//Se supone que aqui va GameOverScene.Load();
 			}
@@ -102,15 +101,15 @@ public class BallTeleportSimple : MonoBehaviour {
 
 			if (transform.position.y.Equals(defpos.y)) {
 				if (square.transform.position.y < transform.position.y) {
-				DoGO ();
+				DoGO (Score.Scores);
 				}
 			}
 
 			newPosition = cam.GetComponent<GlobalProperties> ().changePos ();
 	}
 
-	public void DoGO()
+	public void DoGO(int score)
 	{
-		ShowGameOver.showGameOver ();
+		ShowGameOver.showGameOver (score);
 	}
 }
