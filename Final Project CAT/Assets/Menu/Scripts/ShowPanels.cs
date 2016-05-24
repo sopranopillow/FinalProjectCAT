@@ -45,7 +45,7 @@ public class ShowPanels : MonoBehaviour {
 		optionsTint.SetActive(true);
 	}
 
-	public void GameOver(int score)
+	public void GameOver()
 	{
 		
 		gameOver.SetActive (true);
