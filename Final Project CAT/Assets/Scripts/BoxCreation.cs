@@ -110,13 +110,14 @@ public class BoxCreation : MonoBehaviour {
 			Duration -= Speed;
 			if (waitTime > 0.5f) {
 				if (waitTime > 0.85f)
-					waitTime -= wait / 3;
+					waitTime += wait / 5;
 				else if (waitTime > 0.3f)
-					waitTime -= wait / 2;
+					waitTime += wait / 4;
 				else
-					waitTime -= wait;
+					waitTime += wait / 3;
 			}
 		}
+
 		if(firstTime == true){
 			GameObject[] objs = GameObject.FindGameObjectsWithTag ("Obstacle");
 			int ran = Random.Range (0,objs.Length);
