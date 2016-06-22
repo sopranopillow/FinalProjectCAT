@@ -12,6 +12,7 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject gameOver;							//Store a reference to the Game Object PausePanel 
 	public GameObject ScoreText;
 	public GameObject TopScoreText;
+	public GameObject loadingPanel;
 
 
 	//Call this function to activate and display the Options panel during the main menu
@@ -69,6 +70,15 @@ public class ShowPanels : MonoBehaviour {
 			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score: " + score.ToString());
 			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top Score: "+SaveLoad.GetScore().ToString());
 		}
+	}
+
+	public void showLoading()
+	{
+		loadingPanel.SetActive (true);
+	}
+	public void hideLoading()
+	{
+		loadingPanel.SetActive (false);
 	}
 
 	public void HideGameOver()

@@ -41,6 +41,8 @@ public class BoxCreation : MonoBehaviour {
 	public int[] acolor = new int [6];
 	public int acount=0;
 
+	private ShowPanels showPanels;	
+
 	void Start ()
 	{
 		timesToCreate [0] = amount [0];
