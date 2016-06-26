@@ -10,7 +10,7 @@ public class SaveLoad : MonoBehaviour
 
 	public static void SaveCoins(int coins)
 	{
-		PlayerPrefs.SetInt ("Coins", coins);
+		PlayerPrefs.SetInt ("Coins", GetCoins()+coins);
 	}
 
 	public static int GetScore()

@@ -2,8 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BallTeleportSimple.cs">
     <Files>
-      <File FileName="Assets\Scripts\BallTeleportSimple.cs" Line="119" Column="3" />
-      <File FileName="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" Line="74" Column="3" />
+      <File FileName="Assets\Scripts\Score.cs" Line="39" Column="4" />
+      <File FileName="Assets\Menu\Scripts\StartOptions.cs" Line="99" Column="22" />
+      <File FileName="Assets\Scripts\SaveLoad.cs" Line="12" Column="3" />
+      <File FileName="Assets\Menu\Scripts\ShowPanels.cs" Line="77" Column="99" />
+      <File FileName="Assets\Scripts\BoxCreation.cs" Line="132" Column="8" />
+      <File FileName="Assets\Scripts\BallTeleportSimple.cs" Line="121" Column="50" />
+      <File FileName="Assets\Scripts\Square.cs" Line="74" Column="3" />
+      <File FileName="Assets\Menu\Scripts\ShowGameOver.cs" Line="22" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

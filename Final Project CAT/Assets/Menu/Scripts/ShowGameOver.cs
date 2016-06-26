@@ -16,10 +16,10 @@ public class ShowGameOver : MonoBehaviour {
 
 	}
 
-	public static void showGameOver (int score)
+	public static void showGameOver (int score, int coins)
 	{
 		Time.timeScale = 0;
-		showPanels.GameOver (score);
+		showPanels.GameOver (score, coins);
 	}
 
 	public static void hideGameOver ()

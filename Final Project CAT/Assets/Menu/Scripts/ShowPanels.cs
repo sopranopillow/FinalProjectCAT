@@ -12,8 +12,9 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject gameOver;							//Store a reference to the Game Object PausePanel 
 	public GameObject ScoreText;
 	public GameObject TopScoreText;
+	public GameObject CoinsText;
 	public GameObject loadingPanel;
-
+	public GameObject background;
 
 	//Call this function to activate and display the Options panel during the main menu
 	public void ShowOptionsPanel()
@@ -34,6 +35,7 @@ public class ShowPanels : MonoBehaviour {
 	{
 		menuPanel.SetActive (true);
 		ShowGameOver.hideGameOver ();
+		background.GetComponent<ScrollingB> ().speed = 0.3f;
 	}
 
 	//Call this function to deactivate and hide the main menu panel during the main menu
@@ -49,13 +51,14 @@ public class ShowPanels : MonoBehaviour {
 		optionsTint.SetActive(true);
 	}
 
-	public void GameOver(int score)
+	public void GameOver(int score, int coins)
 	{
 		gameOver.SetActive (true);
 		optionsTint.SetActive(true);
 
 		ScoreText = GameObject.FindGameObjectWithTag ("ScoreGO");
 		TopScoreText = GameObject.FindGameObjectWithTag ("TopScoreGO");
+		CoinsText = GameObject.FindGameObjectWithTag ("CoinsGO");
 
 		//checkScore
 		//if greater changetopscore
@@ -63,22 +66,15 @@ public class ShowPanels : MonoBehaviour {
 		if (SaveLoad.GetScore() < score)
 		{
 			SaveLoad.SaveScore (score);
-			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score: "+score.ToString());
-			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top score: "+score.ToString ());
+			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score "+score.ToString());
+			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top score "+score.ToString ());
 		} else
 		{
-			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score: " + score.ToString());
-			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top Score: "+SaveLoad.GetScore().ToString());
+			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score " + score.ToString());
+			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top Score "+SaveLoad.GetScore().ToString());
 		}
-	}
-
-	public void showLoading()
-	{
-		loadingPanel.SetActive (true);
-	}
-	public void hideLoading()
-	{
-		loadingPanel.SetActive (false);
+		SaveLoad.SaveCoins (coins);
+		CoinsText.GetComponent<UpdateValue> ().UpdateText ("Coins " + SaveLoad.GetCoins ().ToString ());
 	}
 
 	public void HideGameOver()

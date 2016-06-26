@@ -6,6 +6,8 @@ public class BoxCreation : MonoBehaviour {
 
 	public Sprite[] Default;
 
+	public Sprite[] DefaultWithCoin; 
+
 	public GameObject prefab_2;
 	public GameObject prefab_3;
 	public GameObject prefab_4;
@@ -52,10 +54,6 @@ public class BoxCreation : MonoBehaviour {
 		InvokeRepeating ("MakeLine", waitTime, waitTime);
 	}
 
-	void Update()
-	{
-	}
-
 	public int getDiv()
 	{
 		if (timesToCreate [0] == 0) {
@@ -92,7 +90,7 @@ public class BoxCreation : MonoBehaviour {
 
 		for (int i = 0; i < Division; i++) 
 		{
-			MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), Default, Division);
+			MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), Default, DefaultWithCoin, Division);
 		}
 
 		/*for (int o = 0; o < playercolor.Length; o++) {
@@ -129,6 +127,11 @@ public class BoxCreation : MonoBehaviour {
 
 		CancelInvoke ("MakeLine");
 		InvokeRepeating ("MakeLine", waitTime, waitTime);
+	}
+
+	public void cancellInv()
+	{
+		CancelInvoke ("MakeLine");
 	}
 
 	public float getX(int Division)
@@ -177,10 +180,19 @@ public class BoxCreation : MonoBehaviour {
 		return 0;
 	}
 
-	public void MakeRandomSquare(float xPos, Sprite[] def, int division)
+	public bool getCoin()
+	{
+		float percent = Random.Range (0, 100); 
+		if (percent < 15.0f)
+			return true;
+		else
+			return false;
+	}
+
+	public void MakeRandomSquare(float xPos, Sprite[] def, Sprite[] defWC,  int division)
 	{
 
-		int arrayIndex = Random.Range (0, def.Length);
+		int arrayIndex = Random.Range (0, def.Length); 
 
 		//Avoids same color in one line
 		//--------------------------
@@ -195,10 +207,18 @@ public class BoxCreation : MonoBehaviour {
 		acount++;
 		//--------------------------
 
-		Sprite squareSprite = def [arrayIndex];
 		string color = getName (arrayIndex);
+		Sprite squareSprite;
 
 		GameObject newSquare = Instantiate (getPrefab (division));
+		if (getCoin ())
+		{
+			newSquare.GetComponent<Square> ().Coin = true;
+			squareSprite = defWC [arrayIndex];
+		} else
+		{
+			squareSprite = def [arrayIndex];
+		}
 		newSquare.name = color;
 		newSquare.transform.position = new Vector3 (xPos, y, 0.2f);
 		newSquare.GetComponent<Square> ().Color = color;
@@ -209,7 +229,6 @@ public class BoxCreation : MonoBehaviour {
 		newSquare.GetComponent<Square> ().Duration = Duration;
 		newSquare.GetComponent<Square> ().limitDuration = limitDuration;
 		newSquare.GetComponent<SpriteRenderer> ().sprite = squareSprite;
-
 	}
 
 	public GameObject getPrefab(int division)

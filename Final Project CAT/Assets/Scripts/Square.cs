@@ -3,6 +3,8 @@ using System.Collections;
 public class Square : MonoBehaviour {
 	public string Color;
 
+	public bool Coin;
+
 	/*private Transform target;
 	private Transform startline;
 	public Transform myTransform;
