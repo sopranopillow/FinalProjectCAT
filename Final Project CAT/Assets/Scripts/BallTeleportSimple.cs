@@ -35,6 +35,8 @@ public class BallTeleportSimple : MonoBehaviour {
 
 			//References Square
 			GameObject square = GameObject.FindGameObjectWithTag ("Obstacle");
+		if (square != null)
+		{
 			Square namesq = square.GetComponent<Square> ();
 			string Squarecolorstring = namesq.Color;
 			Vector3 Squarepos = namesq.myTransform.position;
@@ -45,13 +47,15 @@ public class BallTeleportSimple : MonoBehaviour {
 			Debug.Log (Squarecolorstring);*/
 
 			//Mouse Click
-			if (Input.GetMouseButtonDown (0)) {
+			if (Input.GetMouseButtonDown (0))
+			{
 				checktele = true;
 
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit2D hit = Physics2D.GetRayIntersection (ray, Mathf.Infinity);
 	
-			if (hit.collider.isTrigger &&(hit.collider.gameObject.GetComponent<Square>().Groups==cam.GetComponent<GlobalProperties>().currentGroup+1)) {
+				if (hit.collider.isTrigger && (hit.collider.gameObject.GetComponent<Square> ().Groups == cam.GetComponent<GlobalProperties> ().currentGroup + 1))
+				{
 					newPosition = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.1f, 0f);
 					//gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, newPosition, 2f*Time.deltaTime);
 					//transform.position = Vector3.Lerp(transform.position, newPosition, 5*Time.deltaTime) ;
@@ -59,36 +63,41 @@ public class BallTeleportSimple : MonoBehaviour {
 					cam.GetComponent<GlobalProperties> ().currentGroup = hit.collider.gameObject.GetComponent<Square> ().Groups;
 					cam.GetComponent<GlobalProperties> ().currentSquare = hit.collider.gameObject;
 					
-				GameObject[] objects = GameObject.FindGameObjectsWithTag ("Obstacle");
-				List<GameObject> lines = new List<GameObject> ();
+					GameObject[] objects = GameObject.FindGameObjectsWithTag ("Obstacle");
+					List<GameObject> lines = new List<GameObject> ();
 
-				int count = 0;
-				for (int i = 0; i < objects.Length; i++) {
-					if (objects [i].GetComponent<Square> ().Groups == cam.GetComponent<GlobalProperties> ().currentGroup + 1) {
-						lines.Add(objects[i]);
-						count++;
+					int count = 0;
+					for (int i = 0; i < objects.Length; i++)
+					{
+						if (objects [i].GetComponent<Square> ().Groups == cam.GetComponent<GlobalProperties> ().currentGroup + 1)
+						{
+							lines.Add (objects [i]);
+							count++;
+						}
 					}
-				}
 
-				int ran = Random.Range (0,lines.Count);
+					int ran = Random.Range (0, lines.Count);
 					
 
-				if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP){
-					score.GetComponent<Score> ().Scores += 1;
-					if (hit.collider.gameObject.GetComponent<Square> ().Coin == true)
-						score.GetComponent<Score> ().Coins += 1;
-				} else {
-					//QuitApplication quit = new QuitApplication ();
-					//quit.Quit ();//Se supone que aqui va GameOverScene.Load();
-					DoGO();
-				}
+					if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP)
+					{
+						score.GetComponent<Score> ().Scores += 1;
+						if (hit.collider.gameObject.GetComponent<Square> ().Coin == true)
+							score.GetComponent<Score> ().Coins += 1;
+					} else
+					{
+						//QuitApplication quit = new QuitApplication ();
+						//quit.Quit ();//Se supone que aqui va GameOverScene.Load();
+						DoGO ();
+					}
 
-					changecol.changecolors (PTextures, lines[ran].GetComponent<Square>().Color);
+					changecol.changecolors (PTextures, lines [ran].GetComponent<Square> ().Color);
 				}
 			}
 
 			//Smooth Movement
-			if (checktele == true) {
+			if (checktele == true)
+			{
 				transform.position = Vector3.MoveTowards (transform.position, newPosition /*square.transform.position*/, 35 * Time.deltaTime);
 			}
 
@@ -104,13 +113,16 @@ public class BallTeleportSimple : MonoBehaviour {
 			Debug.Log (transform.position.y);
 			Debug.Log (defpos.y);*/
 
-			if (transform.position.y.Equals(defpos.y)) {
-				if (square.transform.position.y < transform.position.y) {
-				DoGO ();
+			if (transform.position.y.Equals (defpos.y))
+			{
+				if (square.transform.position.y < transform.position.y)
+				{
+					DoGO ();
 				}
 			}
 
 			newPosition = cam.GetComponent<GlobalProperties> ().changePos ();
+		}
 	}
 
 	public void DoGO()

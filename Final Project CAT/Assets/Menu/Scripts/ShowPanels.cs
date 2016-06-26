@@ -10,6 +10,7 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject menuPanel;							//Store a reference to the Game Object MenuPanel 
 	public GameObject pausePanel;							//Store a reference to the Game Object PausePanel 
 	public GameObject gameOver;							//Store a reference to the Game Object PausePanel 
+	public GameObject themeOptions;
 	public GameObject ScoreText;
 	public GameObject TopScoreText;
 	public GameObject CoinsText;
@@ -30,6 +31,20 @@ public class ShowPanels : MonoBehaviour {
 		optionsTint.SetActive(false);
 	}
 
+	public void ShowThemeOptions()
+	{
+		menuPanel.SetActive (false);
+		themeOptions.SetActive (true);
+		optionsTint.SetActive (true);
+	}
+
+	public void HideThemeOptions()
+	{
+		themeOptions.SetActive (false);
+		optionsTint.SetActive (false);
+		menuPanel.SetActive (true);
+	}
+
 	//Call this function to activate and display the main menu panel during the main menu
 	public void ShowMenu()
 	{
@@ -42,6 +57,7 @@ public class ShowPanels : MonoBehaviour {
 	public void HideMenu()
 	{
 		menuPanel.SetActive (false);
+		optionsTint.SetActive (false);
 	}
 	
 	//Call this function to activate and display the Pause panel during game play

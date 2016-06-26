@@ -6,7 +6,7 @@ public class BoxCreation : MonoBehaviour {
 
 	public Sprite[] Default;
 
-	public Sprite[] DefaultWithCoin; 
+	public Sprite Coin; 
 
 	public GameObject prefab_2;
 	public GameObject prefab_3;
@@ -90,7 +90,7 @@ public class BoxCreation : MonoBehaviour {
 
 		for (int i = 0; i < Division; i++) 
 		{
-			MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), Default, DefaultWithCoin, Division);
+			MakeRandomSquare (getX(Division) + ((getWidth (Division) * i) * 2), Default, Coin, Division);
 		}
 
 		/*for (int o = 0; o < playercolor.Length; o++) {
@@ -189,7 +189,7 @@ public class BoxCreation : MonoBehaviour {
 			return false;
 	}
 
-	public void MakeRandomSquare(float xPos, Sprite[] def, Sprite[] defWC,  int division)
+	public void MakeRandomSquare(float xPos, Sprite[] def, Sprite Coin,  int division)
 	{
 
 		int arrayIndex = Random.Range (0, def.Length); 
@@ -208,17 +208,14 @@ public class BoxCreation : MonoBehaviour {
 		//--------------------------
 
 		string color = getName (arrayIndex);
-		Sprite squareSprite;
+		Sprite squareSprite = def [arrayIndex];
 
 		GameObject newSquare = Instantiate (getPrefab (division));
 		if (getCoin ())
 		{
 			newSquare.GetComponent<Square> ().Coin = true;
-			squareSprite = defWC [arrayIndex];
-		} else
-		{
-			squareSprite = def [arrayIndex];
-		}
+			newSquare.transform.FindChild ("Coin").GetComponent<SpriteRenderer> ().sprite = Coin;
+		} 
 		newSquare.name = color;
 		newSquare.transform.position = new Vector3 (xPos, y, 0.2f);
 		newSquare.GetComponent<Square> ().Color = color;
