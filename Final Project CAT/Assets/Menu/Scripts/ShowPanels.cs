@@ -11,12 +11,13 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject pausePanel;							//Store a reference to the Game Object PausePanel 
 	public GameObject gameOver;							//Store a reference to the Game Object PausePanel 
 	public GameObject themeOptions;
+	public GameObject themeOptions_2;
 	public GameObject ScoreText;
 	public GameObject TopScoreText;
 	public GameObject CoinsText;
 	public GameObject loadingPanel;
 	public GameObject background;
-
+	public GameObject balance;
 	//Call this function to activate and display the Options panel during the main menu
 	public void ShowOptionsPanel()
 	{
@@ -36,11 +37,29 @@ public class ShowPanels : MonoBehaviour {
 		menuPanel.SetActive (false);
 		themeOptions.SetActive (true);
 		optionsTint.SetActive (true);
+		balance = GameObject.FindGameObjectWithTag ("ThemeBalance");
+		balance.GetComponent<UpdateValue> ().UpdateText (SaveLoad.GetCoins().ToString());
 	}
 
 	public void HideThemeOptions()
 	{
 		themeOptions.SetActive (false);
+		optionsTint.SetActive (false);
+		menuPanel.SetActive (true);
+	}
+
+	public void ShowThemeOptions_2()
+	{
+		menuPanel.SetActive (false);
+		themeOptions_2.SetActive (true);
+		optionsTint.SetActive (true);
+		balance = GameObject.FindGameObjectWithTag ("ThemeBalance_2");
+		balance.GetComponent<UpdateValue> ().UpdateText (SaveLoad.GetCoins().ToString());
+	}
+
+	public void HideThemeOptions_2()
+	{
+		themeOptions_2.SetActive (false);
 		optionsTint.SetActive (false);
 		menuPanel.SetActive (true);
 	}

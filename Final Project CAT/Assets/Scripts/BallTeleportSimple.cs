@@ -83,7 +83,10 @@ public class BallTeleportSimple : MonoBehaviour {
 					{
 						score.GetComponent<Score> ().Scores += 1;
 						if (hit.collider.gameObject.GetComponent<Square> ().Coin == true)
+						{
 							score.GetComponent<Score> ().Coins += 1;
+							hit.collider.gameObject.transform.FindChild ("Coin").GetComponent<SpriteRenderer> ().sprite = null;
+						}
 					} else
 					{
 						//QuitApplication quit = new QuitApplication ();
