@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\ScrollingB.cs" />
      <Compile Include="Assets\Scripts\Square.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
+     <Compile Include="Assets\Scripts\ThemeScript.cs" />
      <Compile Include="Assets\Scripts\UpdateValue.cs" />
      <None Include="Assets\Menu\Fonts\OpenSans\License!.txt" />
  <Reference Include="UnityEngine.UI">

@@ -106,6 +106,7 @@ public class ShowPanels : MonoBehaviour {
 
 	public void PlayAgain()
 	{
+		background.GetComponent<ScrollingB> ().speed = 0.3f;
 		gameOver.SetActive (false);
 		optionsTint.SetActive(false);
 		Time.timeScale = 1;
