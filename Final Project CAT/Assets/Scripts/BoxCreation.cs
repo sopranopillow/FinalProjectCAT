@@ -22,6 +22,8 @@ public class BoxCreation : MonoBehaviour {
 
 	public float wait;
 
+	private bool flagRepeat = true;
+
 	private int Groups = 1;
 
 	//Cuantas lineas por cada division
@@ -127,6 +129,7 @@ public class BoxCreation : MonoBehaviour {
 
 		CancelInvoke ("MakeLine");
 		InvokeRepeating ("MakeLine", waitTime, waitTime);
+		flagRepeat = true;
 	}
 
 	public void cancellInv()
@@ -191,6 +194,7 @@ public class BoxCreation : MonoBehaviour {
 
 	public void MakeRandomSquare(float xPos, Sprite[] def, Sprite Coin,  int division)
 	{
+		
 
 		int arrayIndex = Random.Range (0, def.Length); 
 
@@ -211,11 +215,15 @@ public class BoxCreation : MonoBehaviour {
 		Sprite squareSprite = def [arrayIndex];
 
 		GameObject newSquare = Instantiate (getPrefab (division));
-		if (getCoin ())
+		if (flagRepeat == true)
 		{
-			newSquare.GetComponent<Square> ().Coin = true;
-			newSquare.transform.FindChild ("Coin").GetComponent<SpriteRenderer> ().sprite = Coin;
-		} 
+			if (getCoin ())
+			{
+				newSquare.GetComponent<Square> ().Coin = true;
+				newSquare.transform.FindChild ("Coin").GetComponent<SpriteRenderer> ().sprite = Coin;
+				flagRepeat = false;
+			} 
+		}
 		newSquare.name = color;
 		newSquare.transform.position = new Vector3 (xPos, y, 0.2f);
 		newSquare.GetComponent<Square> ().Color = color;

@@ -11,7 +11,6 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject pausePanel;							//Store a reference to the Game Object PausePanel 
 	public GameObject gameOver;							//Store a reference to the Game Object PausePanel 
 	public GameObject themeOptions;
-	public GameObject themeOptions_2;
 	public GameObject ScoreText;
 	public GameObject TopScoreText;
 	public GameObject CoinsText;
@@ -44,22 +43,6 @@ public class ShowPanels : MonoBehaviour {
 	public void HideThemeOptions()
 	{
 		themeOptions.SetActive (false);
-		optionsTint.SetActive (false);
-		menuPanel.SetActive (true);
-	}
-
-	public void ShowThemeOptions_2()
-	{
-		menuPanel.SetActive (false);
-		themeOptions_2.SetActive (true);
-		optionsTint.SetActive (true);
-		balance = GameObject.FindGameObjectWithTag ("ThemeBalance_2");
-		balance.GetComponent<UpdateValue> ().UpdateText (SaveLoad.GetCoins().ToString());
-	}
-
-	public void HideThemeOptions_2()
-	{
-		themeOptions_2.SetActive (false);
 		optionsTint.SetActive (false);
 		menuPanel.SetActive (true);
 	}
