@@ -11,21 +11,21 @@ public class ThemeScript : MonoBehaviour
 	public Sprite[] Default;
 	public Sprite[] DefaultBall;
 	public Material[] DefaultBackground;
-	public bool DefaultActive;
 
 	//GalaxyTheme
 	public Sprite[] Galaxy;
 	public Sprite[] GalaxyBall;
 	public Material[] GalaxyBackground;
-	public bool GalaxyActive;
 
 	public void setGalaxyTheme()
 	{
+		SaveLoad.SaveTheme ("Galaxy");
 		menuBackground.GetComponent<MeshRenderer> ().materials = GalaxyBackground;
 	}
 
 	public void setDefaultTheme()
 	{
-		
+		SaveLoad.SaveTheme ("Default");
+		menuBackground.GetComponent<MeshRenderer> ().materials = DefaultBackground;
 	}
 }

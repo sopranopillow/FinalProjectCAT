@@ -13,6 +13,11 @@ public class SaveLoad : MonoBehaviour
 		PlayerPrefs.SetInt ("Coins", GetCoins()+coins);
 	}
 
+	public static void SaveTheme(string theme)
+	{
+		PlayerPrefs.SetString ("Theme", theme);
+	}
+
 	public static int GetScore()
 	{
 		return PlayerPrefs.GetInt ("TopScore");
@@ -21,5 +26,10 @@ public class SaveLoad : MonoBehaviour
 	public static int GetCoins()
 	{
 		return PlayerPrefs.GetInt ("Coins");
+	}
+
+	public static string getTheme()
+	{
+		return PlayerPrefs.GetString ("Theme");
 	}
 }
