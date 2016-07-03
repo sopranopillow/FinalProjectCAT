@@ -106,11 +106,11 @@ public class ShowPanels : MonoBehaviour {
 
 	public void PlayAgain()
 	{
-		background.GetComponent<ScrollingB> ().speed = 0.3f;
 		gameOver.SetActive (false);
 		optionsTint.SetActive(false);
 		Time.timeScale = 1;
 		SceneManager.LoadScene(1);
+		background.GetComponent<ScrollingB> ().speed = 0.3f;
 	}
 
 	//Call this function to deactivate and hide the Pause panel during game play
