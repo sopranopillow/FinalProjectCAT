@@ -84,15 +84,15 @@ public class ShowPanels : MonoBehaviour {
 		if (SaveLoad.GetScore() < score)
 		{
 			SaveLoad.SaveScore (score);
-			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score "+score.ToString());
-			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top score "+score.ToString ());
+			ScoreText.GetComponent<UpdateValue> ().UpdateText ("            "+score.ToString());
+			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("                   "+score.ToString ());
 		} else
 		{
-			ScoreText.GetComponent<UpdateValue> ().UpdateText ("Score " + score.ToString());
-			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("Top Score "+SaveLoad.GetScore().ToString());
+			ScoreText.GetComponent<UpdateValue> ().UpdateText ("            "+score.ToString());
+			TopScoreText.GetComponent<UpdateValue> ().UpdateText ("                  "+SaveLoad.GetScore().ToString());
 		}
 		SaveLoad.SaveCoins (coins);
-		CoinsText.GetComponent<UpdateValue> ().UpdateText ("Coins " + SaveLoad.GetCoins ().ToString ());
+		CoinsText.GetComponent<UpdateValue> ().UpdateText ("            " + SaveLoad.GetCoins ().ToString ());
 	}
 
 	public void HideGameOver()
