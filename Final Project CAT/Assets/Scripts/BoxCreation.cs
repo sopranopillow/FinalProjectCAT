@@ -8,6 +8,8 @@ public class BoxCreation : MonoBehaviour {
 
 	public Sprite Coin; 
 
+	public Camera cam;
+
 	public GameObject prefab_2;
 	public GameObject prefab_3;
 	public GameObject prefab_4;
@@ -53,7 +55,9 @@ public class BoxCreation : MonoBehaviour {
 		timesToCreate [1] = amount [1];
 		timesToCreate [2] = amount [2];
 		timesToCreate [3] = amount [3];
+		cam.GetComponent<GlobalProperties> ().setThemes ();
 		InvokeRepeating ("MakeLine", waitTime, waitTime);
+
 	}
 
 	public int getDiv()

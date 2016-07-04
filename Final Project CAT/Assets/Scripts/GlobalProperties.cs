@@ -9,7 +9,7 @@ public class GlobalProperties : MonoBehaviour {
 	public Camera cam;
 	public GameObject themeOptions;
 
-	public void Start()
+	public void setThemes()
 	{
 		//themeOptions = GameObject.FindGameObjectWithTag ("ThemeOptions");
 
