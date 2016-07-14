@@ -16,6 +16,9 @@ public class setupUIMenu : MonoBehaviour
 		} else if (SaveLoad.getTheme () == "Galaxy")
 		{
 			themeOptions.GetComponent<ThemeScript> ().setGalaxyTheme ();
+		} else if (SaveLoad.getTheme () == "Stripes")
+		{
+			themeOptions.GetComponent<ThemeScript> ().setStripesTheme ();
 		}
 	}
 }

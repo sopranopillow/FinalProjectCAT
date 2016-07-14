@@ -17,15 +17,24 @@ public class GlobalProperties : MonoBehaviour {
 		if (SaveLoad.getTheme () == "Default")
 		{
 			background.GetComponent<MeshRenderer> ().materials = themeOptions.GetComponent<ThemeScript> ().DefaultBackground;
+			background.GetComponent<ScrollingB> ().speed = 0.3f;
 			cam.GetComponent<BoxCreation> ().Default = themeOptions.GetComponent<ThemeScript> ().Default;
 			ball.GetComponent<BallTeleportSimple> ().PTextures = themeOptions.GetComponent<ThemeScript> ().DefaultBall;
 			ball.GetComponent<ColorChangePlayer> ().PTextures = themeOptions.GetComponent<ThemeScript> ().DefaultBall;
 		} else if (SaveLoad.getTheme () == "Galaxy")
 		{
 			background.GetComponent<MeshRenderer> ().materials = themeOptions.GetComponent<ThemeScript> ().GalaxyBackground;
+			background.GetComponent<ScrollingB> ().speed = 0.3f;
 			cam.GetComponent<BoxCreation> ().Default = themeOptions.GetComponent<ThemeScript> ().Galaxy;
 			ball.GetComponent<BallTeleportSimple> ().PTextures = themeOptions.GetComponent<ThemeScript> ().GalaxyBall;
 			ball.GetComponent<ColorChangePlayer> ().PTextures = themeOptions.GetComponent<ThemeScript> ().GalaxyBall;
+		} else if (SaveLoad.getTheme () == "Stripes")
+		{
+			background.GetComponent<MeshRenderer> ().materials = themeOptions.GetComponent<ThemeScript> ().StripesBackground;
+			background.GetComponent<ScrollingB> ().speed = 0.3f;
+			cam.GetComponent<BoxCreation> ().Default = themeOptions.GetComponent<ThemeScript> ().Stripes;
+			ball.GetComponent<BallTeleportSimple> ().PTextures = themeOptions.GetComponent<ThemeScript> ().StripesBall;
+			ball.GetComponent<ColorChangePlayer> ().PTextures = themeOptions.GetComponent<ThemeScript> ().StripesBall;
 		}
 	}
 
