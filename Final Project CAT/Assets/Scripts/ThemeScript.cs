@@ -23,14 +23,28 @@ public class ThemeScript : MonoBehaviour
 
 	public void setGalaxyTheme()
 	{
-		SaveLoad.SaveTheme ("Galaxy");
-		menuBackground.GetComponent<MeshRenderer> ().materials = GalaxyBackground;
+		if(SaveLoad.getPaidThemes ("Galaxy") == "Paid")
+		{
+			SaveLoad.SaveTheme ("Galaxy");
+			menuBackground.GetComponent<MeshRenderer> ().materials = GalaxyBackground;
+		} else if (SaveLoad.GetCoins () > 200)
+		{
+			SaveLoad.SaveCoins (SaveLoad.GetCoins () - 200);
+			SaveLoad.setPaidThemes ("Galaxy", "Paid");
+		}
 	}
 
 	public void setStripesTheme()
 	{
-		SaveLoad.SaveTheme ("Stripes");
-		menuBackground.GetComponent<MeshRenderer> ().materials = StripesBackground;
+		if (SaveLoad.getPaidThemes ("Stripes") == "Paid")
+		{
+			SaveLoad.SaveTheme ("Stripes");
+			menuBackground.GetComponent<MeshRenderer> ().materials = StripesBackground;
+		} else if (SaveLoad.GetCoins () > 200)
+		{
+			SaveLoad.SaveCoins (SaveLoad.GetCoins () - 200);
+			SaveLoad.setPaidThemes ("Stripes", "Paid");
+		}
 	}
 
 	public void setDefaultTheme()

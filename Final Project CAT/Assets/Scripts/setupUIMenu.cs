@@ -13,12 +13,22 @@ public class setupUIMenu : MonoBehaviour
 		} else if (SaveLoad.getTheme () == "Default")
 		{
 			themeOptions.GetComponent<ThemeScript> ().setDefaultTheme ();
-		} else if (SaveLoad.getTheme () == "Galaxy")
+		} else if (SaveLoad.getTheme () == "Galaxy" && SaveLoad.getPaidThemes ("Galaxy") == "Paid")
 		{
 			themeOptions.GetComponent<ThemeScript> ().setGalaxyTheme ();
-		} else if (SaveLoad.getTheme () == "Stripes")
+		} else if (SaveLoad.getTheme () == "Stripes" && SaveLoad.getPaidThemes ("Stripes") == "Paid")
 		{
 			themeOptions.GetComponent<ThemeScript> ().setStripesTheme ();
+		} else
+		{
+			themeOptions.GetComponent<ThemeScript> ().setDefaultTheme ();
 		}
+
+
+		if (SaveLoad.getPaidThemes ("Galaxy") == null)
+		{
+			SaveLoad.setPaidThemes ("Stripes", "NotPaid");
+			SaveLoad.setPaidThemes ("Galaxy", "NotPaid");
+		} 
 	}
 }

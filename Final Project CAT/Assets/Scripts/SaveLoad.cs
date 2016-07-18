@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SaveLoad : MonoBehaviour
 {
@@ -31,5 +32,15 @@ public class SaveLoad : MonoBehaviour
 	public static string getTheme()
 	{
 		return PlayerPrefs.GetString ("Theme");
+	}
+
+	public static void setPaidThemes(string Theme, string paid)
+	{
+		PlayerPrefs.SetString (Theme, paid);
+	}
+
+	public static string getPaidThemes(string Theme)
+	{
+		return PlayerPrefs.GetString (Theme);
 	}
 }
