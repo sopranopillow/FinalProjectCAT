@@ -29,8 +29,9 @@ public class ThemeScript : MonoBehaviour
 			menuBackground.GetComponent<MeshRenderer> ().materials = GalaxyBackground;
 		} else if (SaveLoad.GetCoins () > 200)
 		{
-			SaveLoad.SaveCoins (SaveLoad.GetCoins () - 200);
+			SaveLoad.SaveCoinsNoAdd (SaveLoad.GetCoins () - 200);
 			SaveLoad.setPaidThemes ("Galaxy", "Paid");
+			menuBackground.GetComponent<MeshRenderer> ().materials = GalaxyBackground;
 		}
 	}
 
@@ -42,8 +43,9 @@ public class ThemeScript : MonoBehaviour
 			menuBackground.GetComponent<MeshRenderer> ().materials = StripesBackground;
 		} else if (SaveLoad.GetCoins () > 200)
 		{
-			SaveLoad.SaveCoins (SaveLoad.GetCoins () - 200);
+			SaveLoad.SaveCoinsNoAdd (SaveLoad.GetCoins () - 200);
 			SaveLoad.setPaidThemes ("Stripes", "Paid");
+			menuBackground.GetComponent<MeshRenderer> ().materials = StripesBackground;
 		}
 	}
 

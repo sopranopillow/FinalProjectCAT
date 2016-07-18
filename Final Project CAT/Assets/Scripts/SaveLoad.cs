@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class SaveLoad : MonoBehaviour
 {
+
 	public static void SaveScore(int score)
 	{
 		PlayerPrefs.SetInt ("TopScore", score);
@@ -12,6 +13,11 @@ public class SaveLoad : MonoBehaviour
 	public static void SaveCoins(int coins)
 	{
 		PlayerPrefs.SetInt ("Coins", GetCoins()+coins);
+	}
+
+	public static void SaveCoinsNoAdd(int coins)
+	{
+		PlayerPrefs.SetInt ("Coins", coins);
 	}
 
 	public static void SaveTheme(string theme)

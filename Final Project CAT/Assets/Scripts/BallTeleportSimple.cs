@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class BallTeleportSimple : MonoBehaviour {
 
 	Vector3 newPosition= new Vector3(0f, -5f, 0f);
@@ -15,11 +16,15 @@ public class BallTeleportSimple : MonoBehaviour {
 	public bool checktele=false;
 	public bool playercrush=true;
 
+	public AudioClip jump;
+	AudioSource audios;
+
 	GameObject score;
 
 	void Start(){
 		defpos= transform.position;
 		score = GameObject.FindGameObjectWithTag ("ScoreText");
+		audios = GetComponent<AudioSource> ();
 	}
 
 	void Update(){
@@ -81,6 +86,7 @@ public class BallTeleportSimple : MonoBehaviour {
 
 					if (hit.collider.gameObject.GetComponent<Square> ().Color == ball.GetComponent<BallName> ().ColorP)
 					{
+						audios.PlayOneShot (jump, 0.7f);
 						score.GetComponent<Score> ().Scores += 1;
 						if (hit.collider.gameObject.GetComponent<Square> ().Coin == true)
 						{
