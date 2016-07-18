@@ -93,6 +93,9 @@ public class ShowPanels : MonoBehaviour {
 		}
 		SaveLoad.SaveCoins (coins);
 		CoinsText.GetComponent<UpdateValue> ().UpdateText ("            " + SaveLoad.GetCoins ().ToString ());
+
+		//Ads 
+		gameOver.GetComponent<SimpleAds>().ShowAd();
 	}
 
 	public void HideGameOver()

@@ -1,12 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BoxCreation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Ads\RewardedAds.cs">
     <Files>
-      <File FileName="Assets\Scripts\setupUIMenu.cs" Line="32" Column="5" />
-      <File FileName="Assets\Scripts\ThemeScript.cs" Line="33" Column="35" />
-      <File FileName="Assets\Scripts\SaveLoad.cs" Line="37" Column="22" />
-      <File FileName="Assets\Scripts\GlobalProperties.cs" Line="37" Column="109" />
-      <File FileName="Assets\Scripts\BoxCreation.cs" Line="121" Column="4" />
+      <File FileName="Assets\Scripts\Ads\RewardedAds.cs" Line="3" Column="30" />
+      <File FileName="Assets\Scripts\Ads\SimpleAds.cs" Line="1" Column="1" />
+      <File FileName="Assets\Menu\Scripts\ShowPanels.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\setupUIMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThemeScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SaveLoad.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GlobalProperties.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BoxCreation.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
